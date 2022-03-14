@@ -12,15 +12,13 @@ class MoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Request Healthkit permission, start connection to DB
         authorizeHK()
         createDatabase()
         // Do any additional setup after loading the view.
     }
     
 
-    //@IBOutlet weak var excited: UIButton!
-    
-    
     @IBOutlet weak var exited: UIButton!
     
     @IBOutlet weak var happy: UIButton!

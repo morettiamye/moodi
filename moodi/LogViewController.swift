@@ -23,6 +23,8 @@ class LogViewController: UIViewController {
     
     @IBOutlet weak var notesTextView: UITextView!
     
+    
+    // Save additional data, push to table
     @IBAction func setMoodData(_ sender: Any) {
         newMoodToLog.moodContributors = contributorsTextView.text
         newMoodToLog.notes = notesTextView.text
@@ -31,7 +33,4 @@ class LogViewController: UIViewController {
         saveMood(tm: newMoodToLog)
         
     }
-    
-    
-
 }

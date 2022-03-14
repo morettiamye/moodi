@@ -11,6 +11,8 @@ import SQLite
 
 import HealthKit
 
+
+// Structs for DB information
 struct TodaysMood {
     var mood:String
     var weather:String
@@ -29,7 +31,7 @@ var newMoodToLog = TodaysMood.init(mood: "", weather: "", sleep: "", notes: "", 
 
 
 // Create SQLite Database & Table
-func openDatabase() throws -> (Connection) {
+func openDatabase() throws -> Connection {
     
     let path = NSSearchPathForDirectoriesInDomains(
         .documentDirectory,
@@ -53,6 +55,8 @@ let colDate = Expression<Date>("logDate")
 let colFlow = Expression<Int>("flow")
 let colFlowDate = Expression<Date>("flowDate")
 
+
+// Create Tables
 func createDatabase() {
 
     do {
@@ -77,7 +81,7 @@ func createDatabase() {
     }
 }
 
-
+// Add mood data to loggedMood table
 func saveMood(tm: TodaysMood){
     do {
         let db = try openDatabase()
@@ -96,6 +100,8 @@ func saveMood(tm: TodaysMood){
     }
 }
 
+
+// add data to flowData table
 func saveFlow(fd: userCycle){
     do {
         let db = try openDatabase()
@@ -119,12 +125,12 @@ func authorizeHK() {
 
     healthStore.requestAuthorization(toShare: nil, read: allTypes) { (success, error) in
         if !success {
-            // Handle the error here.
+            fatalError("Healthkit can't authorize")
         }
     }
 }
 
-
+// Retrieve menstrual cycle data from Health
 func retrieveCycleData(){
     
     guard let sampleType = HKSampleType.categoryType(forIdentifier: HKCategoryTypeIdentifier.menstrualFlow) else {

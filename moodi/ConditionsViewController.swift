@@ -21,19 +21,11 @@ class ConditionsViewController: UIViewController {
     @IBOutlet weak var weatherTextView: UITextView!
     
     
+    // Set inputted sleep and weather data
     @IBAction func setConditionsData(_ sender: Any) {
         newMoodToLog.sleep = sleepTextView.text
         newMoodToLog.weather = weatherTextView.text
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
