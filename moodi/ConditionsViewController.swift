@@ -7,7 +7,7 @@
 
 import UIKit
 
-class conditionsViewController: UIViewController {
+class ConditionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +15,17 @@ class conditionsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var sleepTextView: UITextView!
+    
+    
+    @IBOutlet weak var weatherTextView: UITextView!
+    
+    
+    @IBAction func setConditionsData(_ sender: Any) {
+        newMoodToLog.sleep = sleepTextView.text
+        newMoodToLog.weather = weatherTextView.text
+    }
+    
     /*
     // MARK: - Navigation
 

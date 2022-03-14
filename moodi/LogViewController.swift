@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SQLite
+
+
 class LogViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -15,15 +18,20 @@ class LogViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBOutlet weak var contributorsTextView: UITextView!
+    
+    @IBOutlet weak var notesTextView: UITextView!
+    
+    @IBAction func setMoodData(_ sender: Any) {
+        newMoodToLog.moodContributors = contributorsTextView.text
+        newMoodToLog.notes = notesTextView.text
+        
+        
+        saveMood(tm: newMoodToLog)
+        
     }
-    */
+    
+    
 
 }

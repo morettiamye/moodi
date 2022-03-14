@@ -12,6 +12,7 @@ class TrendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        retrieveCycleData()
         // Do any additional setup after loading the view.
     }
     
