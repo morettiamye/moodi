@@ -153,8 +153,6 @@ func createMoodArray() -> ([ChartDataEntry], [ChartDataEntry]) {
       x = x + 1
     }
  
-    print(moodDict)
-    print(flowDict)
     return (moodValues, flowValues)
 }
 
@@ -191,6 +189,7 @@ func getFlowValue(flowValue: String) -> Int {
             return 1;
     }
 }
+
 // add data to flowData table
 func saveFlow(fd: userCycle){
     do {
@@ -207,13 +206,11 @@ func saveFlow(fd: userCycle){
 }
 
 
-// This is the new function that truncates the date,
-// modify the date like you want it.
+// This function truncates the date
 func truncatedDate(date: Date = Date()) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "dd"
 
     let result = dateFormatter.string(from: date)
-    print(result)
     return result
 }
