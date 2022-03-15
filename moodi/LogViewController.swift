@@ -18,6 +18,18 @@ class LogViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var sleepTextView: UITextView!
+    
+    
+    @IBOutlet weak var weatherTextView: UITextView!
+    
+    
+    // Set inputted sleep and weather data
+    @IBAction func setConditionsData(_ sender: Any) {
+        newMoodToLog.sleep = sleepTextView.text
+        newMoodToLog.weather = weatherTextView.text
+    }
+    
     
     @IBOutlet weak var contributorsTextView: UITextView!
     
@@ -29,8 +41,16 @@ class LogViewController: UIViewController {
         newMoodToLog.moodContributors = contributorsTextView.text
         newMoodToLog.notes = notesTextView.text
         
-        
         saveMood(tm: newMoodToLog)
         
     }
+    
+    // Simpler way of dismissing keyboard than demo'd in class
+    // Apple docs on endEditing @ https://developer.apple.com/documentation/uikit/uiview/1619630-endediting
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
+
 }

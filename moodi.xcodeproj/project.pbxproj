@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1A6AF7527DE6A050085ED37 /* mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A6AF7427DE6A050085ED37 /* mood.swift */; };
 		E1A6AF7827DEB7D00085ED37 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E1A6AF7727DEB7D00085ED37 /* SQLite */; };
 		E1A6AF8427DFD9B60085ED37 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A6AF8127DFD8C60085ED37 /* Charts.framework */; platformFilter = ios; };
 		E1A6AF8527DFD9B60085ED37 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1A6AF8127DFD8C60085ED37 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -19,8 +18,10 @@
 		E1CE36AF27DD468800E8A496 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CE36AE27DD468800E8A496 /* MoodViewController.swift */; };
 		E1CE36B127DD475F00E8A496 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CE36B027DD475F00E8A496 /* TrendsViewController.swift */; };
 		E1CE36B327DD480C00E8A496 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CE36B227DD480C00E8A496 /* LogViewController.swift */; };
-		E1CE36B527DD6D5300E8A496 /* ConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CE36B427DD6D5300E8A496 /* ConditionsViewController.swift */; };
 		E1CE36B927DD6F5400E8A496 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CE36B827DD6F5400E8A496 /* HealthKit.framework */; };
+		E1DE678927DFDB93005499DB /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE678627DFDB93005499DB /* Database.swift */; };
+		E1DE678C27DFE101005499DB /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = E1DE678B27DFE101005499DB /* TinyConstraints */; };
+		E1DE678E27DFE953005499DB /* CallHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE678D27DFE953005499DB /* CallHealthKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +56,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E1A6AF7427DE6A050085ED37 /* mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mood.swift; sourceTree = "<group>"; };
 		E1A6AF7B27DFD8C60085ED37 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-4.0.2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		E1CE369727DC055300E8A496 /* moodi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CE369A27DC055300E8A496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,9 +67,10 @@
 		E1CE36AE27DD468800E8A496 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		E1CE36B027DD475F00E8A496 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		E1CE36B227DD480C00E8A496 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
-		E1CE36B427DD6D5300E8A496 /* ConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsViewController.swift; sourceTree = "<group>"; };
 		E1CE36B627DD6F5400E8A496 /* moodi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = moodi.entitlements; sourceTree = "<group>"; };
 		E1CE36B827DD6F5400E8A496 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E1DE678627DFDB93005499DB /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E1DE678D27DFE953005499DB /* CallHealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHealthKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 				E1A6AF8427DFD9B60085ED37 /* Charts.framework in Frameworks */,
 				E1A6AF7827DEB7D00085ED37 /* SQLite in Frameworks */,
 				E1CE36B927DD6F5400E8A496 /* HealthKit.framework in Frameworks */,
+				E1DE678C27DFE101005499DB /* TinyConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,12 +117,12 @@
 		E1CE369927DC055300E8A496 /* moodi */ = {
 			isa = PBXGroup;
 			children = (
-				E1CE36B427DD6D5300E8A496 /* ConditionsViewController.swift */,
+				E1DE678627DFDB93005499DB /* Database.swift */,
+				E1DE678D27DFE953005499DB /* CallHealthKit.swift */,
 				E1CE36B627DD6F5400E8A496 /* moodi.entitlements */,
 				E1CE369A27DC055300E8A496 /* AppDelegate.swift */,
 				E1CE369C27DC055300E8A496 /* SceneDelegate.swift */,
 				E1CE36A027DC055300E8A496 /* Main.storyboard */,
-				E1A6AF7427DE6A050085ED37 /* mood.swift */,
 				E1CE36B227DD480C00E8A496 /* LogViewController.swift */,
 				E1CE36B027DD475F00E8A496 /* TrendsViewController.swift */,
 				E1CE36AE27DD468800E8A496 /* MoodViewController.swift */,
@@ -159,6 +161,7 @@
 			name = moodi;
 			packageProductDependencies = (
 				E1A6AF7727DEB7D00085ED37 /* SQLite */,
+				E1DE678B27DFE101005499DB /* TinyConstraints */,
 			);
 			productName = moodi;
 			productReference = E1CE369727DC055300E8A496 /* moodi.app */;
@@ -190,6 +193,7 @@
 			mainGroup = E1CE368E27DC055200E8A496;
 			packageReferences = (
 				E1A6AF7627DEB7D00085ED37 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				E1DE678A27DFE101005499DB /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 			);
 			productRefGroup = E1CE369827DC055300E8A496 /* Products */;
 			projectDirPath = "";
@@ -242,10 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1CE36B127DD475F00E8A496 /* TrendsViewController.swift in Sources */,
-				E1A6AF7527DE6A050085ED37 /* mood.swift in Sources */,
 				E1CE369B27DC055300E8A496 /* AppDelegate.swift in Sources */,
-				E1CE36B527DD6D5300E8A496 /* ConditionsViewController.swift in Sources */,
+				E1DE678E27DFE953005499DB /* CallHealthKit.swift in Sources */,
 				E1CE36AF27DD468800E8A496 /* MoodViewController.swift in Sources */,
+				E1DE678927DFDB93005499DB /* Database.swift in Sources */,
 				E1CE36B327DD480C00E8A496 /* LogViewController.swift in Sources */,
 				E1CE369D27DC055300E8A496 /* SceneDelegate.swift in Sources */,
 			);
@@ -481,6 +485,14 @@
 				version = 0.13.2;
 			};
 		};
+		E1DE678A27DFE101005499DB /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -488,6 +500,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E1A6AF7627DEB7D00085ED37 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;
+		};
+		E1DE678B27DFE101005499DB /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1DE678A27DFE101005499DB /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
